@@ -7,10 +7,16 @@ button.onclick = function(){
   {
       if(request.status == 200)
       {
-          var counter = request.responseText;
-           counter = counter + 1;
-           var span = document.getElementById('count');
+          var counter = request.responseText();
+          var span = document.getElementById('count');
+          span.innerHTML = counter.toString();
+          
       }
   }
   };
- };
+  
+  req.open('GET','http://srivardhan-reddy.imad.hasura-app.io/counter',true);
+  req.send(null);
+  
+
+};
