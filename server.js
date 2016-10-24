@@ -132,8 +132,7 @@ pool.query("SELECT * FROM article WHERE title = '"+req.params.articleName+"'",fu
        }
    }
 });
-  res.send(createTemplate(articleData));
-});
+ });
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
