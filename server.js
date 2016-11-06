@@ -88,8 +88,6 @@ return htmlTemplate;
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-
-});
 var counter = 0;
 app.get('/counter', function(req,res){
    counter = counter + 1;
@@ -103,6 +101,7 @@ app.get('/submit-name', function(req,res){
 });
 var pool = new Pool(config);
 app.get('/test-db', function(req,res){
+    
     pool.query('SELECT * FROM test', function (err,result){
        if (err)
        { res.status(500).send(err.tostring());
@@ -111,7 +110,8 @@ app.get('/test-db', function(req,res){
        {
             res.send(JSON.stringify(result.rows));
        }
-           
+    
+    });   
     });
 app.get('/articles/:articleName', function (req,res){
 pool.query("SELECT * FROM article WHERE title = '"+req.params.articleName+"' ",function (err,result){
