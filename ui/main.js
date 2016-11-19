@@ -1,5 +1,3 @@
-
-
 var submit = document.getElementById('Submit_btn');
 submit.onclick = function () {
      var request = new XMLHttpRequest();
