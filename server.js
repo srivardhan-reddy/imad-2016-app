@@ -15,39 +15,7 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var articles = {
-'article-1' : {
-  title: ' article-1 lannisters send their regards',
-  heading: 'ARTICLE -1' ,
-  date: 'sep 25 , 2016',
-  content:`                    <p>
-                        GAME OF THORNES rules this is the content of the webpage.GAME OF THORNES rules this is the content of the webpageGAME OF THORNES rules this is the content of the webpageGAME OF THORNES rules this is the content of the webpage
-                    </p>
-                    <p>
-                        GAME OF THORNES rules this is the content of the webpage.GAME OF THORNES rules this is the content of the webpageGAME OF THORNES rules this is the content of the webpageGAME OF THORNES rules this is the content of the webpage
-                    </p>
-                    <p>
-                        GAME OF THORNES rules this is the content of the webpage.GAME OF THORNES rules this is the content of the webpageGAME OF THORNES rules this is the content of the webpageGAME OF THORNES rules this is the content of the webpage
-                    </p>` 
-},
-'article-2' : {
-    title: ' article-2 lannisters send their regards',
-  heading: 'ARTICLE -2' ,
-  date: 'sep 15 , 2016',
-  content:`            <p>
-                        GAME OF THORNES rules this is the content of the webpage.GAME OF THORNES rules this is the content of the webpageGAME OF THORNES rules this is the content of the webpageGAME OF THORNES rules this is the content of the webpage
-                    </p>
-                    <p>
-                        GAME OF THORNES rules this is the content of the webpage.GAME OF THORNES rules this is the content of the webpageGAME OF THORNES rules this is the content of the webpageGAME OF THORNES rules this is the content of the webpage
-                    </p>` },
-'article-3' : { 
-    title: ' article-3 lannisters send their regards',
-  heading: 'ARTICLE -3' ,
-  date: 'sep 5 , 2016',
-  content:`           <p>
-                  GAME OF THORNES rules this is the content of the webpage.GAME OF THORNES rules this is the content of the webpageGAME OF THORNES rules this is the content of the webpageGAME OF THORNES rules this is the content of the webpage
-                   </p>`} 
-};
+
 function createTemplate (data){
     var title = data.title;
     var date = data.date;
