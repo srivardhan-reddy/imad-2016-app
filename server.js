@@ -57,6 +57,16 @@ return htmlTemplate;
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+function hash (input,salt){
+    var hashed = crypto.pkbdf2Sync(input,salt,10000,512,'sha512');
+    return hashed.toString('hex');
+}
+app.get('/hash/:inut', function(req,res){
+   
+   var hashedString = hash (req.params.input,'random string');
+   res.send(hashedString);
+    
+});
 var counter = 0;
 app.get('/counter', function(req,res){
    counter = counter + 1;
@@ -68,16 +78,8 @@ app.get('/submit-name', function(req,res){
    names.push(name);
    res.send(JSON.stringify(names));
 });
-function hash (input,salt){
-    var hashed = crypto.pkbdf2Sync(input,salt,10000,512,'sha512');
-    return hashed.toString('hex');
-}
-app.get('/hash/:inut', function(req,res){
-   
-   var hashedString = hash (req.params.input,'random string');
-   res.send(hashedString);
-    
-});
+
+
 var pool = new Pool(config);
  app.get('/test-db', function(req,res){
     
